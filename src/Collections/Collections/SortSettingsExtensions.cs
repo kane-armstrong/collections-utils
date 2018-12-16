@@ -7,12 +7,14 @@ namespace Armsoft.Collections
         public static string ToSqlOrderBy(this SortSettings sort)
         {
             var builder = new StringBuilder();
-            builder.Append($"order by {sort.PropertyName} {SortDirectionAsSqlSort(sort.SortAscending)}");
+            var prefix = string.IsNullOrEmpty(sort.PropertyTableAlias) ? "" : $"[{sort.PropertyTableAlias}].";
+            builder.Append($"order by {prefix}[{sort.PropertyName}] {SortDirectionAsSqlSort(sort.SortAscending)}");
 
             var then = sort.ThenBy;
             while (then != null)
             {
-                builder.Append($", {then.PropertyName} {SortDirectionAsSqlSort(then.SortAscending)}");
+                var thenPrefix = string.IsNullOrEmpty(then.PropertyTableAlias) ? "" : $"[{then.PropertyTableAlias}].";
+                builder.Append($", {thenPrefix}[{then.PropertyName}] {SortDirectionAsSqlSort(then.SortAscending)}");
                 then = then.ThenBy;
             }
 
@@ -22,6 +24,7 @@ namespace Armsoft.Collections
         private static string SortDirectionAsSqlSort(bool flag)
         {
             return flag ? "asc" : "desc";
+
         }
     }
 }

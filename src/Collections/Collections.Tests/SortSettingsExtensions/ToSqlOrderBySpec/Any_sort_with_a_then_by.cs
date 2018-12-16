@@ -21,7 +21,7 @@ namespace Armsoft.Collections.Tests.SortSettingsExtensions.ToSqlOrderBySpec
             };
             var sut = setting.ToSqlOrderBy();
             sut.Equals(
-                $"order by {nameof(SortSettings)} desc, {nameof(SortSettings.SortAscending)} asc",
+                $"order by [{nameof(SortSettings)}] desc, [{nameof(SortSettings.SortAscending)}] asc",
                 StringComparison.InvariantCultureIgnoreCase
             ).Should().BeTrue();
         }

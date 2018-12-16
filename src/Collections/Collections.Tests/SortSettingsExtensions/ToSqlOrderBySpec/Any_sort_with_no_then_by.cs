@@ -17,7 +17,7 @@ namespace Armsoft.Collections.Tests.SortSettingsExtensions.ToSqlOrderBySpec
             };
             var sut = setting.ToSqlOrderBy();
             sut.Equals(
-                $"order by {nameof(SortSettings)} asc",
+                $"order by [{nameof(SortSettings)}] asc",
                 StringComparison.InvariantCultureIgnoreCase
             ).Should().BeTrue();
         }
@@ -33,7 +33,7 @@ namespace Armsoft.Collections.Tests.SortSettingsExtensions.ToSqlOrderBySpec
             };
             var sut = setting.ToSqlOrderBy();
             sut.Equals(
-                $"order by {nameof(SortSettings)} desc",
+                $"order by [{nameof(SortSettings)}] desc",
                 StringComparison.InvariantCultureIgnoreCase
             ).Should().BeTrue();
         }
