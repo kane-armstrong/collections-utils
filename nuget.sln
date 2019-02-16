@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{DE7CB565-5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\EventBus\EventBus\EventBus.csproj", "{A380224C-AC10-4150-BB07-69F995A631E9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.ServiceBus", "src\EventBus.ServiceBus\EventBus.ServiceBus\EventBus.ServiceBus.csproj", "{10598A23-AF82-4392-AE76-0627FA65104B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,18 @@ Global
 		{A380224C-AC10-4150-BB07-69F995A631E9}.Release|x64.Build.0 = Release|Any CPU
 		{A380224C-AC10-4150-BB07-69F995A631E9}.Release|x86.ActiveCfg = Release|Any CPU
 		{A380224C-AC10-4150-BB07-69F995A631E9}.Release|x86.Build.0 = Release|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Debug|x64.Build.0 = Debug|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Debug|x86.Build.0 = Debug|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Release|x64.ActiveCfg = Release|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Release|x64.Build.0 = Release|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Release|x86.ActiveCfg = Release|Any CPU
+		{10598A23-AF82-4392-AE76-0627FA65104B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +86,7 @@ Global
 		{2F4DA2D8-FA07-432F-A27D-EB93B898C8E9} = {7A88AC89-CF64-4EAF-958E-20D060D87036}
 		{80914912-4A88-413C-BA47-02E1E723A81E} = {8BC9DA34-C73C-4F23-A03C-3EB802329C67}
 		{A380224C-AC10-4150-BB07-69F995A631E9} = {7A88AC89-CF64-4EAF-958E-20D060D87036}
+		{10598A23-AF82-4392-AE76-0627FA65104B} = {7A88AC89-CF64-4EAF-958E-20D060D87036}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7238AEE8-3D4B-45B4-8EA8-B2A71E3285CF}
