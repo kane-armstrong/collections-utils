@@ -1,0 +1,39 @@
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  buildConfiguration: 'Release'
+  version: 0.1.0-beta
+  feedName: armsoft
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - src/EventBus.IntegrationEvents/*
+    exclude:
+    - src/**
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Restore NuGet packages
+  inputs:
+    command: 'restore'
+    projects: 'src/EventBus.IntegrationEvents/**/*.csproj'
+    feedsToUse: config
+    nugetConfigPath: 'nuget.config'
+
+- script: dotnet build 'src/EventBus.IntegrationEvents/EventBus.IntegrationEvents' -c $(buildConfiguration) --no-restore
+  displayName: Build - $(buildConfiguration)
+
+- script: dotnet pack 'src/EventBus.IntegrationEvents/EventBus.IntegrationEvents' /p:PackageVersion=$(version) -c $(buildConfiguration) -o '$(Build.ArtifactStagingDirectory)/packages' --no-build
+  displayName: Create NuGet packages
+
+- task: NuGetCommand@2
+  displayName: Publish NuGet packages
+  inputs:
+    command: push
+    publishVstsFeed: '$(feedName)'
+    allowPackageConflicts: true

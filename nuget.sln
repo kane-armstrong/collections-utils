@@ -22,6 +22,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.ServiceBus", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.IntegrationEvents", "src\EventBus.IntegrationEvents\EventBus.IntegrationEvents\EventBus.IntegrationEvents.csproj", "{FFB94429-8023-424A-A09F-7FECFAC1DB3B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{5A8A7DCE-92B1-41A8-AE6C-A91FA758CD43}"
+	ProjectSection(SolutionItems) = preProject
+		build\collections.yaml = build\collections.yaml
+		build\eventbus-integrationevents.yaml = build\eventbus-integrationevents.yaml
+		build\eventbus-servicebus.yaml = build\eventbus-servicebus.yaml
+		build\eventbus.yaml = build\eventbus.yaml
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
