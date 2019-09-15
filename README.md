@@ -1,6 +1,6 @@
-# Collections Extensions
+# Collections Utilities
 
-[![Build status](https://dev.azure.com/kanearmstrong/armsoft.collections/_apis/build/status/kane-armstrong.collections-extensions?branchName=master)](https://dev.azure.com/kanearmstrong/armsoft.collections/_build)
+[![Build Status](https://dev.azure.com/kanearmstrong/armsoft.collections/_apis/build/status/kane-armstrong.collections-utils?branchName=master)](https://dev.azure.com/kanearmstrong/armsoft.collections/_build/latest?definitionId=4&branchName=master)
 
 This repository contains the source code for the Armsoft.Collections package on NuGet.
 
