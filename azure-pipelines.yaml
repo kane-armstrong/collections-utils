@@ -12,18 +12,14 @@ trigger:
     include:
     - src/Collections/*
 
-steps:
-- task: DotNetCoreCLI@2
-  displayName: Build - $(buildConfiguration)
-  inputs:
-    command: build 
-    configuration: $(buildConfiguration)
- 
-- task: DotNetCoreCLI@2
-  displayName: Run tests
-  inputs:
-    command: test
-    projects: 'src/**/*Tests.csproj'
+- script: dotnet restore
+  displayName: Restore NuGet packages
+
+- script: dotnet build -c $(buildConfiguration)
+  displayName: Build solution
+
+- script: dotnet test
+  displayName: Run unit tests
 
 - script: dotnet pack 'src/Collections' -o '$(Build.ArtifactStagingDirectory)/packages/collections' --no-build
   displayName: Create NuGet packages    
