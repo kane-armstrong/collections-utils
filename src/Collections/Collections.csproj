@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Armsoft.Collections</AssemblyName>
+    <RootNamespace>Armsoft.Collections</RootNamespace>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageId>Armsoft.Collections</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Kane Armstrong</Authors>
+    <Company>Armsoft</Company>
+    <Description>This library contains utilities for sorting and paginating collections that implement IQueryable.</Description>
+  </PropertyGroup>
+
+</Project>
