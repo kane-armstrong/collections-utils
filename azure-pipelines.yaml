@@ -22,7 +22,7 @@ trigger:
   displayName: Run unit tests
 
 - script: dotnet pack 'src/Collections' -o '$(Build.ArtifactStagingDirectory)/packages/collections' --no-build
-  displayName: Create NuGet packages    
+  displayName: Create NuGet packages
 
 - script: dotnet nuget push '$(Build.ArtifactStagingDirectory)/packages/collections/*.nupkg' -k $(nugetApiKey)
   displayName: Publish NuGet packages 
