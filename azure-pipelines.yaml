@@ -18,15 +18,15 @@ steps:
   inputs:
     command: build 
     configuration: $(buildConfiguration)
-    projects: 'src/Collections/**/*.csproj'
+    projects: 'src/**/*.csproj'
  
 - task: DotNetCoreCLI@2
   displayName: Run tests
   inputs:
     command: test
-    projects: 'src/Collections/**/*Tests.csproj'
+    projects: 'src/**/*Tests.csproj'
 
-- script: dotnet pack 'src/Collections/Collections' -o '$(Build.ArtifactStagingDirectory)/packages/collections' --no-build
+- script: dotnet pack 'src/Collections' -o '$(Build.ArtifactStagingDirectory)/packages/collections' --no-build
   displayName: Create NuGet packages    
 
 - script: dotnet nuget push '$(Build.ArtifactStagingDirectory)/packages/collections/*.nupkg' -k $(nugetApiKey)

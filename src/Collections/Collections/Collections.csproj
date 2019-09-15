@@ -11,6 +11,8 @@
     <Authors>Kane Armstrong</Authors>
     <Company>Armsoft</Company>
     <Description>This library contains utilities for sorting and paginating collections - works with either IQueryable or raw MSSQL queries.</Description>
+    <PackageProjectUrl>https://github.com/kane-armstrong/collections-utils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kane-armstrong/collections-utils</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
