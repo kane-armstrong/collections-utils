@@ -16,12 +16,8 @@ steps:
 - script: dotnet restore
   displayName: Restore NuGet packages
 
-- task: DotNetCoreCLI@2
-  displayName: Build - $(buildConfiguration)
-  inputs:
-    command: build 
-    configuration: $(buildConfiguration)
-    projects: 'src/**/*.csproj'
+- script: dotnet build -c $(buildConfiguration)
+  displayName: Build solution
 
 - script: dotnet test --logger trx
   displayName: Run unit tests
@@ -32,7 +28,7 @@ steps:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
 
-- script: dotnet pack 'src/Collections' -o '$(Build.ArtifactStagingDirectory)/packages/collections' --no-build
+- script: dotnet pack 'src/Collections' -o '$(Build.ArtifactStagingDirectory)/packages/collections'
   displayName: Create NuGet packages
 
 - script: dotnet nuget push '$(Build.ArtifactStagingDirectory)/packages/collections/*.nupkg' -k $(nugetApiKey)
