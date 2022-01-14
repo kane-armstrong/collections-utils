@@ -14,6 +14,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
+      - name: Setup .NET Core 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
