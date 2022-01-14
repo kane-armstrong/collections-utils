@@ -46,7 +46,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"kane-armstrong_collections-utils" /o:"kane-armstrong" /d:sonar.cs.opencover.reportsPaths="**/*.coveragexml" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /o:"${{ secrets.SONAR_ORGANIZATION }}" /k:"${{ secrets.SONAR_PROJECT }}" /d:sonar.cs.opencover.reportsPaths="**/*.coveragexml" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
           dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=tests.coveragexml /p:IncludeTestAssembly=true
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
