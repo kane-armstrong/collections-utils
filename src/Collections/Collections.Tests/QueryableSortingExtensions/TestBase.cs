@@ -13,7 +13,7 @@ public class TestBase
         public int DateOfBirth { get; set; }
     }
 
-    protected IQueryable<MySortableType> GenerateTestSet()
+    protected static IQueryable<MySortableType> GenerateTestSet()
     {
         return new List<MySortableType>
             {
