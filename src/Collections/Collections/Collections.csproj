@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+	<LangVersion>10.0</LangVersion>
     <AssemblyName>Armsoft.Collections</AssemblyName>
     <RootNamespace>Armsoft.Collections</RootNamespace>
     <IncludeSymbols>true</IncludeSymbols>
