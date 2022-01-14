@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace Armsoft.Collections.Tests.QueryableSortingExtensions.ThenBySpec
+namespace Armsoft.Collections.Tests.QueryableSortingExtensions.ThenBySpec;
+
+public class An_empty_set : TestBase
 {
-    public class An_empty_set : TestBase
+    [Fact]
+    public void allows_any_sorting_attempt()
     {
-        [Fact]
-        public void allows_any_sorting_attempt()
-        {
-            var set = new List<MySortableType>()
-                .AsQueryable()
-                .OrderByDescending(nameof(MySortableType.Name));
-            var sut = set.ToList();
-            sut.Should().BeEmpty();
-        }
+        var set = new List<MySortableType>()
+            .AsQueryable()
+            .OrderByDescending(nameof(MySortableType.Name));
+        var sut = set.ToList();
+        sut.Should().BeEmpty();
     }
 }
