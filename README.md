@@ -19,7 +19,3 @@ either Entity Framework with LINQ-to-SQL, or Dapper/ADO.NET with raw SQL queries
 * Paging:
   * For LINQ-to-SQL (e.g. Entity Framework) - `QueryablePagingExtensions.Paginate<T>(this IOrderedQueryable<T> query, int pageIndex, int pageSize)`
   * For raw SQL queries (e.g. Dapper) - `PageSettingsExtensions.ToSqlPaginate(this PageSettings sort)`
-  
-## Todo list
-
-* Add the ability to arbitrarily filter by multiple properties (equals, contains, less than, etc.)
